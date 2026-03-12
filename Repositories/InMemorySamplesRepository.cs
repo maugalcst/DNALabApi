@@ -14,7 +14,7 @@ namespace DnaLabApi.Repositories
         ];
         public async Task CreateAsync(Sample sample)
         {
-            throw new NotImplementedException();
+            samples.Add(sample);
         }
 
         public async Task DeleteAsync(Guid id)
@@ -28,17 +28,23 @@ namespace DnaLabApi.Repositories
 
         public async Task<IEnumerable<Sample>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return samples;
         }
 
         public async Task<Sample> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var sample = samples.FirstOrDefault(x => x.Id == id);
+            return sample;
         }
 
         public async Task UpdateAsync(Sample sample)
         {
-            throw new NotImplementedException();
+            var oldSample = samples.Find(x => x.Id == sample.Id);
+            if (oldSample != null)
+            {
+                samples.Remove(oldSample);
+                samples.Add(sample);
+            }
         }
     }
 }

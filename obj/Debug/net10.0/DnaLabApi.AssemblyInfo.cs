@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("26b91d28-d1d8-49e2-b466-080f63e6ec52")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DnaLabApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c6b7adc49dc251b8c0934e25fa0e6cc912382ef")]
 [assembly: System.Reflection.AssemblyProductAttribute("DnaLabApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DnaLabApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

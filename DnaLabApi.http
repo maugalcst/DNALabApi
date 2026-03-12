@@ -1,0 +1,6 @@
+@DnaLabApi_HostAddress = http://localhost:5243
+
+GET {{DnaLabApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

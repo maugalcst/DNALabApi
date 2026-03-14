@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DnaLabApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e669e3a55fed629b80f9d9c08cc6c523dc99176c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0d19b767d9c182a93ca9eb6b382fe8bf4f544f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DnaLabApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DnaLabApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

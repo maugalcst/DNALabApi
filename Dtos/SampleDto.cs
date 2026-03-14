@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using DnaLabApi.Entities;
 using DnaLabApi.Enums;
 
@@ -13,18 +14,18 @@ namespace DnaLabApi.Dtos
     );
 
     public record CreateSampleDto(
-        string DonorName,
-        int DonorAge,
-        DonorSex DonorSex,
-        SampleType SampleType
+        [Required] string DonorName,
+        [Range(1, 210)] int DonorAge,
+        [Required] DonorSex DonorSex,
+        [Required] SampleType SampleType
     );
 
     public record UpdateSampleDto(
-        string DonorName,
-        int DonorAge,
-        DonorSex DonorSex,
-        SampleType SampleType,
-        SampleStatus Status
+        [Required] string DonorName,
+        [Range(1, 210)] int DonorAge,
+        [Required] DonorSex DonorSex,
+        [Required] SampleType SampleType,
+        [Required] SampleStatus Status
     );
 
     public static class SampleExtensions

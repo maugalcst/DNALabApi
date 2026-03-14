@@ -1,5 +1,12 @@
 using DnaLabApi.Repositories;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
+using MongoDB.Driver;
 using Scalar.AspNetCore;
+
+BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
+BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(BsonType.String));
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +20,11 @@ builder.Services.AddControllers().
             new System.Text.Json.Serialization.JsonStringEnumConverter()
         );
     });
-    
-builder.Services.AddSingleton<ISampleRepository, InMemorySamplesRepository>();
+
+builder.Services.AddSingleton<IMongoClient>(new MongoClient(
+    builder.Configuration.GetConnectionString("MongoDb") ?? "mongodb://localhost:27027"
+));
+builder.Services.AddSingleton<ISampleRepository, MongoDbSamplesRepository>();
 
 var app = builder.Build();
 

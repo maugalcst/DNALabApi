@@ -1,12 +1,14 @@
 using DnaLabApi.Dtos;
 using DnaLabApi.Entities;
 using DnaLabApi.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DnaLabApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class SamplesController : ControllerBase
     {
         private readonly ISampleRepository _sampleRepository;

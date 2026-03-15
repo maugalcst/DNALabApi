@@ -49,6 +49,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddHealthChecks().AddMongoDb(sp => sp.GetRequiredService<IMongoClient>());
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,6 +60,7 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
+app.MapHealthChecks("/health");
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();

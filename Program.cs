@@ -63,7 +63,6 @@ if (app.Environment.IsDevelopment())
 app.MapHealthChecks("/health");
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
 
